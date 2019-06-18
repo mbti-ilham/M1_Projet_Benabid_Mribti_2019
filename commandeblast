@@ -1,0 +1,16 @@
+
+formatdb -p T -i prot.fa -o T   #transformer prot.fa en base de données
+blastp  -query E3_outputseqothers.fa  -db prot.fa  -outfmt 6 -num_threads 12  > table.tsv &   #lancer blast pour les proetines 
+
+
+
+#petit filtrage pour le lancement de blast si necessaire 
+
+cut -d '|' -f1  E3_outputseqothers.fa  >  E3_outputseqothers.fa 
+
+cut -d '|' -f1 prot.fa > prot.fa 
+
+nb de seq prot.fr = 4063561   # grep ">" prot.fa | wc -l
+
+
+
