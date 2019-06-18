@@ -1,0 +1,8 @@
+ data<-read.table("E4_outputlongueurfam.txt")
+data[,data[,1]==1]
+famille = data[,1]
+taille = data[,2]
+
+
+
+hist( log(taille), col = topo.colors(12), border = grey(0.2),main = paste("Distribution des familles en fonction d leurs taille "),xlab ="famille",ylab = "log(taille)",labels = TRUE)
